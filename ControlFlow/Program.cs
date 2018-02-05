@@ -38,7 +38,27 @@ namespace ControlFlow
             var height = Convert.ToDouble(Console.ReadLine());
             var img = (width > height) ? imageMode.landscape : imageMode.portrait;
             Console.Write(img);
-                               
+
+            //4 - Your job is to write a program for a speed camera.
+            //For simplicity, ignore the details such as camera, sensors, etc and focus purely on the logic.
+            //Write a program that asks the user to enter the speed limit.
+            //Once set, the program asks for the speed of a car.
+            //If the user enters a value less than the speed limit, program should display Ok on the console.
+            //If the value is above the speed limit, the program should calculate the number of demerit points.
+            //For every 5km / hr above the speed limit, 1 demerit points should be incurred and displayed on the console.
+            //If the number of demerit points is above 12, the program should display License Suspended.
+            Console.WriteLine("Enter Speed Limit: ");
+            var speedLimit = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Speed of a car: ");
+            var carSpeed = Convert.ToDouble(Console.ReadLine());
+            if(carSpeed<speedLimit){
+                Console.WriteLine("Ok");
+            }else{
+                var overFlowSpeed = carSpeed - speedLimit;
+                var points = overFlowSpeed / 5;
+                var result = (points > 12) ? "License Suspended" : "Demerit Points: " + points;
+                Console.WriteLine(result);
+            }
 		}
     }
 }
