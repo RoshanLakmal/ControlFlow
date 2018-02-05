@@ -16,6 +16,14 @@ namespace ControlFlow
             }else{
                 Console.WriteLine("Invalid");
             }
-        }
+
+            //2 - Write a program which takes two numbers from the console and displays the maximum of the two.
+            Console.WriteLine("Enter Number1: ");
+            var num1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter Number2: ");
+            var num2 = Convert.ToDouble(Console.ReadLine());
+            var max = (num1 > num2) ? num1 : num2;
+            Console.WriteLine("Max: "+max);
+		}
     }
 }
