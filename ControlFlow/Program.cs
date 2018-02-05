@@ -4,6 +4,11 @@ namespace ControlFlow
 {
     class MainClass
     {
+        public enum imageMode
+        {
+            portrait =1,
+            landscape = 2
+        }
         public static void Main(string[] args)
         {
             //1 - Write a program and ask the user to enter a number.
@@ -24,6 +29,16 @@ namespace ControlFlow
             var num2 = Convert.ToDouble(Console.ReadLine());
             var max = (num1 > num2) ? num1 : num2;
             Console.WriteLine("Max: "+max);
+
+            //3 - Write a program and ask the user to enter the width and height of an image.
+            //Then tell if the image is landscape or portrait.
+            Console.WriteLine("Enter the width: ");
+            var width = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the height: ");
+            var height = Convert.ToDouble(Console.ReadLine());
+            var img = (width > height) ? imageMode.landscape : imageMode.portrait;
+            Console.Write(img);
+                               
 		}
     }
 }
